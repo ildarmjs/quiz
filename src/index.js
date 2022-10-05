@@ -1,17 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
+
+const questions = [
+	{
+		title: 'React - это ... ?',
+		variants: ['библиотека', 'фреймворк', 'приложение'],
+		correct: 0,
+	},
+	{
+		title: 'Компонент - это ... ',
+		variants: [
+			'приложение',
+			'часть приложения или страницы',
+			'то, что я не знаю что такое',
+		],
+		correct: 1,
+	},
+	{
+		title: 'Что такое JSX?',
+		variants: [
+			'Это простой HTML',
+			'Это функция',
+			'Это тот же HTML, но с возможностью выполнять JS-код',
+		],
+		correct: 2,
+	},
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+	<React.StrictMode>
+		<App questions={questions} />
+	</React.StrictMode>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
